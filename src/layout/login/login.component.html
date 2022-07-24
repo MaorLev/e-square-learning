@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="input">
+<!--      <input placeholder="User name or email"-->
+<!--             [formControlName]="'username'" type="text">-->
+      <ac-input [config]="userNameConfig" [formControlName]="'username'"></ac-input>
+
+<!--      <div class="label">Password</div>-->
+<!--      <input type="password" placeholder="min 3 digit"-->
+<!--             formControlName="password">-->
+      <ac-input [config]="passwordConfig" [formControlName]="'password'"></ac-input>
+
+      <app-google-authenticator
+        formControlName="googleAuthenticator"></app-google-authenticator>
+    </div>
+
+    <button mat-raised-button color="primary">Submit</button>
+    <button mat-stroked-button color="accent" (click)="$event.preventDefault();formGroup.reset()">reset</button>
+  </form>
+
+  <!-- DO NOT USE UNLESS YOU ARE IN CLASS -->
+  <!--  <form #loginForm="ngForm">-->
+
+  <!--    <div class="label">User name</div>-->
+  <!--    <input [(ngModel)]="user.username" required minlength="3" name="username" type="text">-->
+
+  <!--    <div class="label">Password</div>-->
+  <!--    <input [(ngModel)]="user.password" required type="password" name="password">-->
+
+  <!--    <button type="submit" (click)="onSubmit(user)"-->
+  <!--            [disabled]="!loginForm.form.valid">Submit</button>-->
+  <!--    <button (click)="print(loginForm.form)">Submit any way</button>-->
+  <!--    <button (click)="loginForm.reset();resetFormTopServer()">Reset</button>-->
+
+  <!--  </form>-->
+
+  {{formGroup.value|json}}
+</div>
+

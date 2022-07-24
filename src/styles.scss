@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/fonts";
+@import "assets/styles/global";
+@import "assets/styles/table";
+@import "assets/styles/theme";
+
+body{
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+//button{
+//  border-radius: 10px;
+//  background: brown;
+//  color: white;
+//  &[disabled]{
+//
+//  background: #865e5e;
+//  }
+//}
+
+.center{
+  display: grid;
+  place-content: center;
+}
